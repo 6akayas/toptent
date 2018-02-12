@@ -1,0 +1,7 @@
+<div class="form-group col-md-6">
+	<%= form_for @project, url: {action: "create"}  do |f| %>
+	Title: 	 <%= f.text_field :title, :class => 'form-control' %>
+	Description: <%= f.text_area :description, :class => 'form-control' %>
+	<%= f.submit :class => 'btn btn-primary' %>
+	<% end %>
+</div>

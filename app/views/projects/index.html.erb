@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="home-header row">
 		<div class="col">
-			<button> New </button>
+			<%= link_to 'New Project', new_project_path %>
 		</div>
 		<div class="col-6">
 			<h2> Projects </h2>
@@ -11,34 +11,32 @@
 		</div>
 	</div>
 	
-	<div class="home-reusable-template row">
+	<!-- <div class="home-reusable-template row">
 		<div class="col">
 			<h2>
 			Do the same sort of Projects over and over? <a href="#">Make a reusable template</a> to save yourself some time.
 			</h2>
 		</div>
-	</div>
-
+	</div> -->
 	<% @projects.each do |project| %>
-    <tr>
-      <td><%= project.title %></td>
-      <td><%= project.text %></td>
-      <td><%= link_to 'Show', project_path(project) %></td>
-    </tr>
-  <% end %>
-
+	<tr>
+		<td><%= project.title %></td>
+		<td><%= project.description %></td>
+		<td><%= link_to 'Show', project_path(project) %></td>
+	</tr>
+	<% end %>
 	<!-- <div class="home-projects row">
-		<div class="col">
-			<div class="project-card">
-				<div class="project-title">
-					Making a Podcast
-				</div>
-				<div class="project-description">
-					An example of using TopTent to produce a Podcast.
-				</div>
-				<div class="project-people">
-				</div>
+			<div class="col">
+					<div class="project-card">
+							<div class="project-title">
+									Making a Podcast
+							</div>
+							<div class="project-description">
+									An example of using TopTent to produce a Podcast.
+							</div>
+							<div class="project-people">
+							</div>
+					</div>
 			</div>
-		</div>
 	</div> -->
 </div>

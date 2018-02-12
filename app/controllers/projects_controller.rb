@@ -2,18 +2,26 @@ class ProjectsController < ApplicationController
   
   def index
   	@projects = Project.all
-  	render
   end
 
   def show
   	 @project = Project.find(params[:id])
   end
 
-  def create
-  	@project = Project.new
-  	@project.save
-  	redirect_to @project
+  def new
+	 @project = Project.new
   end
+
+  def create
+  	@project = Project.new(project_params)
+  	if @project.save
+  		flash[:success] = "Project card made!"
+  		redirect_to project_oath(@project)
+  	else
+  		flash[:danger] = 'Input Error'
+		  render :action => :new
+	end
+  end 
 
   def edit
   end
@@ -23,8 +31,8 @@ class ProjectsController < ApplicationController
 
 
   private
-  def article_params
-    params.require(:article).permit(:title, :text)
+  def project_params
+    params.require(:article).permit(:title, :description)
   end
 
 end
