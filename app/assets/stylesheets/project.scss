@@ -1,17 +1,13 @@
-// Place all the styles related to the Project controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 html {
   font-size: 10px;
 }
 
 body {
-  color: #283c46;
   background-color: #f5efe6;
+  color: #283c46;
+  font-size: 1.7rem;
   line-height: 1.5;
   margin-top: 0;
-  font-size: 1.7rem;
 }
 
 .home-header, .home-reusable-template {
@@ -20,7 +16,7 @@ body {
 	color: #aa9c84;
 
 	a{
-		color: #aa9c84;
+		  color: #aa9c84;
 		text-decoration: underline;
 	}
 }
